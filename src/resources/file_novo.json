@@ -1,0 +1,10 @@
+{
+	"id": "abc123",
+	"CampoA": "valorAy",
+	"CampoB": "valorB",
+	"CampoC": {
+		"itemA": 123,
+		"itemB": 598
+	},
+	"CampoD": "valorD"
+}
