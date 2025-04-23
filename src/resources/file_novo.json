@@ -1,6 +1,6 @@
 {
 	"id": "abc123",
-	"CampoA": "valorAy",
+	"CampoA": "valorA",
 	"CampoB": "valorB",
 	"CampoC": {
 		"itemA": 123,
