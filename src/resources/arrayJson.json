@@ -1,0 +1,40 @@
+[{
+  "id": "abc123",
+  "CampoA": "valorA",
+  "CampoB": "valorB",
+  "CampoC": {
+    "itemA": 123,
+    "itemB": 598
+  },
+  "CampoD": "valorD"
+},
+{
+"id": "dsf545",
+"CampoA": "valorA",
+"CampoB": "valorB",
+"CampoC": {
+"itemA": 123,
+"itemB": 598
+},
+"CampoD": "valorD"
+},
+{
+"id": "sdsdf",
+"CampoA": "valorA",
+"CampoB": "valorB",
+"CampoC": {
+"itemA": 123,
+"itemB": 598
+},
+"CampoD": "valorD"
+},
+{
+"id": "asdsafds",
+"CampoA": "valorA",
+"CampoB": "valorB",
+"CampoC": {
+"itemA": 123,
+"itemB": 598
+},
+"CampoD": "valorD"
+}]

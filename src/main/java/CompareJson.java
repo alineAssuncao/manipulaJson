@@ -6,12 +6,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class ComparaJson {
+public class CompareJson {
 
-    public ComparaJson(String fileOrig, String fileNew, String[] fieldsDisregard){
-        String pathDefault = "src/resources/";
-        final String fileOrigPath = pathDefault + fileOrig;
-        final String fileNewPath = pathDefault + fileNew;
+    public CompareJson(String fileOrig, String fileNew, String[] fieldsDisregard){
+        final String fileOrigPath = fileOrig;
+        final String fileNewPath = fileNew;
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -41,7 +40,7 @@ public class ComparaJson {
                     }
                 }
             } else {
-                System.out.println("Os JSONs são iguais (exceto o(s) campo(s): " + Arrays.toString(fieldsDisregard));
+                System.out.println("Os JSONs são iguais exceto o(s) campo(s): " + Arrays.toString(fieldsDisregard));
             }
 
         } catch (IOException e) {
