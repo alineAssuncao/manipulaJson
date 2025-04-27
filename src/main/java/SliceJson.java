@@ -10,27 +10,36 @@ public class SliceJson {
     public SliceJson(String searchFile, String searchField) throws IOException {
         //Carregando o JSON de um arquivo
         ObjectMapper objectMapper = new ObjectMapper();
-        ArrayNode jsonArray = (ArrayNode) objectMapper.readTree(new File(searchFile));
+        JsonNode rootNode = objectMapper .readTree(new File(searchFile));
+
+        //Caso tenho o JSON seja um Array
+        //ArrayNode jsonArray = (ArrayNode) objectMapper.readTree(new File(searchFile));
 
         //Valor para busca dentro do Json (neste caso será o ID)
         String targeId = searchField;
 
-        //Buscando o JSON com o valor especifico (ID)
-        JsonNode resultNode = null;
-        for (JsonNode node : jsonArray){
-            if (node.path("id").asText().equals(targeId)){
-                resultNode = node;
-                break;
+        //Caso o JSON seja um array
+        if (rootNode.isArray()){
+            for (JsonNode node : rootNode){
+                if (node.path("id").asText().equals(targeId)){
+                    System.out.println("JSON encontrado:");
+                    System.out.println(node.toPrettyString());
+                    return;
+                }
             }
         }
-
-        //Exibindo resultado
-        if (resultNode != null){
-            System.out.println("Json encontrado:");
-            System.out.println(resultNode.toPrettyString());
-        } else {
-            System.out.println("Nenhum JSson encontrado com ID: " + targeId);
+        //Caso o JSON seja um objeto
+        else if (rootNode.isObject()){
+            if (rootNode.path("id").asText().equals(targeId)){
+                System.out.println("JSON encontrado:");
+                System.out.println(rootNode.toPrettyString());
+            } else {
+                System.out.println("Nenhum JSON encontrado com ID: " + targeId);
+            }
+        } else{
+            System.out.println("O formato do JSON não é válido.");
         }
+
     }
 
 }
