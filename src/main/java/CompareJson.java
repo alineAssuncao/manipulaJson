@@ -8,9 +8,10 @@ import java.util.Iterator;
 
 public class CompareJson {
 
-    public CompareJson(String fileOrig, String fileNew, String[] fieldsDisregard){
+    public static String CompareJson(String fileOrig, String fileNew, String[] fieldsDisregard){
         final String fileOrigPath = fileOrig;
         final String fileNewPath = fileNew;
+        String result = "";
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -39,13 +40,18 @@ public class CompareJson {
                         System.out.println("Arquivo Novo: " + valueNew);
                     }
                 }
+                result = "Falha";
+                return result;
             } else {
                 System.out.println("Os JSONs são iguais exceto o(s) campo(s): " + Arrays.toString(fieldsDisregard));
+                result = "Sucesso";
+                return result;
             }
 
         } catch (IOException e) {
             System.err.println("Erro ao ler os arquivos JSON: " + e.getMessage());
         }
+        return fileOrigPath;
     }
 
 }

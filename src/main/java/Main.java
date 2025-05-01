@@ -6,9 +6,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String pathDefault = "src/resources/";
 
-        CompareJson compareJson = new CompareJson(pathDefault+"fileOrig.json", pathDefault+"fileNew.json", new String[]{"id"});
+        CompareJson compareJson;
+        compareJson = new CompareJson();
+        compareJson.CompareJson(pathDefault+"fileOrig.json", pathDefault+"fileNew.json", new String[]{"id"});
 
-        SliceJson sliceJson = new SliceJson(pathDefault+"arrayJson.json", "sdsdf");
+        SliceJson sliceJson;
+        sliceJson = new SliceJson();
+        sliceJson.SliceJson(pathDefault+"arrayJson.json", "sdsdf");
+
 
         //Manipulação para criação e manipulação de um JSON
 
@@ -21,19 +26,19 @@ public class Main {
         DadosJson novoObjeto = new DadosJson("abc123", "Aline", "40", comidasFavoritas, "gym");
 
         // Criar/Adicionar objeto
-        JsonManipulation.createJson(novoObjeto);
+        JsonManipulation.createJson(novoObjeto, pathDefault+"temp.json");
 
         // Consultar objeto
-        JsonManipulation.selectJson("abc123");
+        JsonManipulation.selectJson("abc123", pathDefault + "temp.json");
 
         // Alterar objeto
         DadosJson objetoAlterado = new DadosJson("abc123", "Aline Assuncao", "42",comidasFavoritas, "gym");
-        JsonManipulation.changeJson("abc123", objetoAlterado);
+        JsonManipulation.changeJson("abc123", objetoAlterado, pathDefault+"temp.json");
 
         // Consultar objeto alterado
-        JsonManipulation.selectJson("abc123");
+        JsonManipulation.selectJson("abc123", pathDefault+"temp.json");
 
         // Excluir objeto
-        JsonManipulation.deleteJson("abc123");
+        JsonManipulation.deleteJson("abc123", pathDefault+"temp.json");
     }
 }
