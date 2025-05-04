@@ -28,7 +28,7 @@ public class CompareJson {
 
             //Compara os JSONs
             if (!rootNodeOrig.equals(rootNodeNew)){
-                System.out.println("FALHA! Os JSONs são diferentes. Diferenças: ");
+                System.out.println("❌ FALHA! Os JSONs são diferentes. Diferenças: ");
                 Iterator<String> fieldNames = rootNodeOrig.fieldNames();
                 while (fieldNames.hasNext()){
                     String fieldName = fieldNames.next();
@@ -43,13 +43,14 @@ public class CompareJson {
                 result = "Falha";
                 return result;
             } else {
-                System.out.println("Os JSONs são iguais exceto o(s) campo(s): " + Arrays.toString(fieldsDisregard));
+                System.out.println("✅ SUCESSO! Os JSONs são iguais exceto o(s) campo(s): " + Arrays.toString(fieldsDisregard));
+                System.out.println("JSON: " + rootNodeOrig.toPrettyString());
                 result = "Sucesso";
                 return result;
             }
 
         } catch (IOException e) {
-            System.err.println("Erro ao ler os arquivos JSON: " + e.getMessage());
+            System.err.println("❌ Erro ao ler os arquivos JSON: " + e.getMessage());
         }
         return fileOrigPath;
     }

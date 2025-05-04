@@ -1,10 +1,9 @@
 {
 	"id": "deh987",
-	"CampoA": "valorA",
-	"CampoB": "valorB",
-	"CampoC": {
-		"itemA": 123,
-		"itemB": 598
+	"nome": "Aline",
+	"perfil": {
+		"cargo": "Desenvolvedora",
+		"skills": ["Java", "Spring Boot", "MongoDB"]
 	},
-	"CampoD": "valorD"
+	"timestamp": "2025-05-04T16:58:00"
 }

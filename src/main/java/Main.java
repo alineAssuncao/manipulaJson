@@ -8,8 +8,9 @@ public class Main {
 
         CompareJson compareJson;
         compareJson = new CompareJson();
-        compareJson.CompareJson(pathDefault+"fileOrig.json", pathDefault+"fileNew.json", new String[]{"id"});
+        compareJson.CompareJson(pathDefault+"fileOrig.json", pathDefault+"fileNew.json", new String[]{"id", "timestamp"});
 
+/*
         SliceJson sliceJson;
         sliceJson = new SliceJson();
         sliceJson.SliceJson(pathDefault+"arrayJson.json", "sdsdf");
@@ -40,5 +41,9 @@ public class Main {
 
         // Excluir objeto
         JsonManipulation.deleteJson("abc123", pathDefault+"temp.json");
+
+
+ */
+
     }
 }
