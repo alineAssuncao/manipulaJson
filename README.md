@@ -1,7 +1,9 @@
 # Manipulação de JSON
-by Aline Assunção
+*by Aline Assunção `[Jornada Tech]`*
 
-ManipulaJson é uma biblioteca criada para a manipulação e gerenciamento de dados no formato JSON. Este projeto visa facilitar operações comuns em arquivos JSON por meio de funcionalidades que abrangem:
+## Capítulo 2 - Java + Manipulação de arquivos JSON 
+
+**ManipulaJson** é uma biblioteca criada para a manipulação e gerenciamento de dados no formato JSON. Este projeto visa facilitar operações comuns em arquivos JSON por meio de funcionalidades que abrangem:
 
 - **CRUD:** Criação, leitura, atualização e deleção de registros.
 - **Comparação:** Verificação de diferenças e semelhanças entre diferentes estruturas ou versões de JSON.
